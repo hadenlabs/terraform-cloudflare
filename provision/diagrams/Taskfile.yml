@@ -12,6 +12,13 @@ tasks:
       - cmd: mkdir -p static/images/diagrams
       - cmd: mkdir -p docs/images/diagrams
       - task: make
+        vars:
+          FILES_PLANTUML:
+            sh: >-
+              find ./ -type f -name '*.plantuml'
+              | grep -v '.terraform'
+              | sort -u
+              | xargs
 
   publish:
     desc: Publish Diagrams.
@@ -29,9 +36,7 @@ tasks:
   make:
     desc: generate files plantuml.
     cmds:
-      - cmd: echo {{.FILES_PLANTUML}}
-      - cmd: |-
-          docker run
+      - cmd: docker run
           --platform linux/amd64
           --rm
           --workdir /data

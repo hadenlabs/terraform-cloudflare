@@ -5,11 +5,12 @@
 <!-- Include: ./../disclaimer.md -->
 <!-- Include: ac:toc -->
 
-### Common
+## Common
 
 ```hcl
-  module "main" {
-    source  = "hadenlabs/terraform-cloudflare/aws"
-    version = "0.0.0"
-  }
+module "main" {
+  source = git::https://github.com/hadenlabs/terraform-cloudflare//modules/record?ref=0.0.0
+  version = 0.0.0
+  module_enabled = var.module_enabled
+}
 ```
