@@ -18,9 +18,13 @@
 
 terraform-cloudflare for project
 
+## Modules
+
+- Record [Record](modules/record/README.md)
+
 ## Requirements
 
-This is a list of plugins that need to be installed previously to enjoy all the goodies of this configuration:
+This is a list of requirements that need to be installed previously to enjoy all the goodies of this configuration:
 
 - [gomplate](https://github.com/hairyhenderson/gomplate)
 - [terraform](https://github.com/hashicorp/terraform)
@@ -49,13 +53,14 @@ Full working examples can be found in [examples](./examples) folder.
 <!-- Include: ./../disclaimer.md -->
 <!-- Include: ac:toc -->
 
-### Common
+## Common
 
 ```hcl
-  module "main" {
-    source  = "hadenlabs/terraform-cloudflare/aws"
-    version = "0.0.0"
-  }
+module "main" {
+  source = git::https://github.com/hadenlabs/terraform-cloudflare//modules/record?ref=0.0.0
+  version = 0.0.0
+  module_enabled = var.module_enabled
+}
 ```
 
  <!-- markdown-link-check-disable -->
@@ -92,7 +97,7 @@ No outputs.
 
 ## Help
 
-**Got a question?**
+### Got a question?
 
 File a GitHub [issue](https://github.com/hadenlabs/terraform-cloudflare/issues).
 

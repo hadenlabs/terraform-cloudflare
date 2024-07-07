@@ -560,10 +560,11 @@ bin
 .secrets
 public
 TMP_CHANGELOG.md
+build
 .task
 .terraform.lock.hcl
-*.lock.hcl
 *.lock
+*.lock.hcl
 *.zip
 .external_modules
 vendor
