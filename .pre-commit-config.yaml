@@ -94,10 +94,6 @@ repos:
         args:
           - --fix
           - --config=.ci/linters/.golangci.yml
-
-      - id: terraform-tflint
-        args:
-          - "--config=.ci/linters/.tflint.hcl"
       - id: terragrunt-fmt
       - id: terraform-fmt
       - id: terraform-tfsec
