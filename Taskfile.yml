@@ -17,6 +17,7 @@ includes:
   ssh: ./provision/task/ssh.yml
   diagrams: ./provision/diagrams/Taskfile.yml
   terraform: ./provision/task/terraform.yml
+  module_record: ./modules/record/Taskfile.yml
 
 env:
   DOCKER:
@@ -53,10 +54,11 @@ vars:
     .secrets
     public
     TMP_CHANGELOG.md
+    build
     .task
     .terraform.lock.hcl
-    *.lock.hcl
     *.lock
+    *.lock.hcl
     *.zip
     .external_modules
     vendor
@@ -98,6 +100,10 @@ tasks:
     desc: Generate Readme
     silent: true
     cmds:
+      - task: terraform:doc
+        vars:
+          TERRAFORM_PATH: modules/record
+      - task: module_record:readme
       - >-
         gomplate --file {{.README_TEMPLATE}}
         --out {{.README_FILE}}
@@ -109,7 +115,14 @@ tasks:
     run: once
     desc: Execute prettier files
     cmds:
+      - task: go:prettier
       - task: prettier:all
+
+  test:
+    run: once
+    desc: Execute of test
+    cmds:
+      - task: go:test
 
   upgrade:
     desc: Execute upgrade packages
@@ -128,13 +141,22 @@ tasks:
       - task: yarn:setup
       - task: git:setup
 
-  test:
-    run: once
-    desc: Execute task test all
-    cmds:
-      - task: go:test
-
   environment:
     desc: Setup environment of project
     cmds:
       - task: python:environment
+      - task: terraform:environment
+
+  generate:
+    desc: Generate files
+    cmds:
+      - task: go:mockery
+      - task: go:generate
+
+  help:
+    cmds:
+      - cmd: |
+          echo 'Use "task --list" to get a list of all available tasks with a short description of what they do.'
+          echo 'There are some more tasks used as dependencies for other tasks.'
+          echo 'You can view them with "task --list-all".'
+        silent: true

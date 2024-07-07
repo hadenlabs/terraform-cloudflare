@@ -101,7 +101,7 @@ repos:
       - id: terragrunt-fmt
       - id: terraform-fmt
       - id: terraform-tfsec
-
+        exclude: .terraform
       - id: gitleaks
         args:
           - --path=.
