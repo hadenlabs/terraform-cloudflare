@@ -1,18 +1,18 @@
 <!-- Space: Projects -->
-<!-- Parent: TerraformNullTags -->
-<!-- Title: Contributing TerraformNullTags -->
-<!-- Label: TerraformNullTags -->
+<!-- Parent: TerraformCloudflare -->
+<!-- Title: Contributing TerraformCloudflare -->
+<!-- Label: TerraformCloudflare -->
 <!-- Label: Contributing -->
 <!-- Include: disclaimer.md -->
 <!-- Include: ac:toc -->
 
 # How To Contribute
 
-Contributions to terraform-module-template are welcome.
+Contributions to terraform-cloudflare are welcome.
 
 Feel free to use all of the contribution options:
 
-- Contribute to terraform-module-template repositories on [GitHub](https://github.com/hadenlabs/terraform-module-template). See [Git flow](./contribute/github-flow.md).
+- Contribute to terraform-cloudflare repositories on [GitHub](https://github.com/hadenlabs/terraform-cloudflare). See [Git flow](./contribute/github-flow.md).
 
 ## Getting Started
 
@@ -73,7 +73,7 @@ See [Git flow](./contribute/github-flow.md).
 
 ### Documentation
 
-Documentation is a part of the terraform-module-template code base. You can find the documentation files in the `doc/` subdirectory of the [main repository](https://github.com/hadenlabs/terraform-module-template). This means that the contribution process is the same for both the source code and documentation.
+Documentation is a part of the terraform-cloudflare code base. You can find the documentation files in the `doc/` subdirectory of the [main repository](https://github.com/hadenlabs/terraform-cloudflare). This means that the contribution process is the same for both the source code and documentation.
 
 ### Testing
 
@@ -81,15 +81,15 @@ See [Testing](./testing.md).
 
 ### Code Submission
 
-1.  See if a [Pull Request](https://github.com/hadenlabs/terraform-module-template/pulls) exists
+1.  See if a [Pull Request](https://github.com/hadenlabs/terraform-cloudflare/pulls) exists
     - Add some comments or review the code to help it along
     - Don\'t be afraid to comment when logic needs clarification
-2.  Create a Fork and open a [Pull Request](https://github.com/hadenlabs/terraform-module-template/pulls) if needed
+2.  Create a Fork and open a [Pull Request](https://github.com/hadenlabs/terraform-cloudflare/pulls) if needed
 
 ### Code Review
 
 - Anyone can review code
-- Any [Pull Request](https://github.com/hadenlabs/terraform-module-template/pulls) should be closed or merged within a week
+- Any [Pull Request](https://github.com/hadenlabs/terraform-cloudflare/pulls) should be closed or merged within a week
 
 ### Code Acceptance
 

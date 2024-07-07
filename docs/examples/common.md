@@ -1,15 +1,15 @@
 <!-- Space: Projects -->
-<!-- Parent: TerraformModuleTemplate -->
-<!-- Title: Examples TerraformModuleTemplate -->
+<!-- Parent: TerraformCloudflare -->
+<!-- Title: Examples TerraformCloudflare -->
 <!-- Label: Examples -->
 <!-- Include: ./../disclaimer.md -->
 <!-- Include: ac:toc -->
 
-### common
+### Common
 
 ```hcl
   module "main" {
-    source  = "hadenlabs/terraform-module-template/aws"
+    source  = "hadenlabs/terraform-cloudflare/aws"
     version = "0.0.0"
   }
 ```

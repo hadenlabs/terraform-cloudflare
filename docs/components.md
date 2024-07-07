@@ -1,7 +1,7 @@
 <!-- Space: Projects -->
-<!-- Parent: TerraformModuleTemplate -->
-<!-- Title: Components TerraformModuleTemplate -->
-<!-- Label: TerraformModuleTemplate -->
+<!-- Parent: TerraformCloudflare -->
+<!-- Title: Components TerraformCloudflare -->
+<!-- Label: TerraformCloudflare -->
 <!-- Label: Project -->
 <!-- Label: Components -->
 <!-- Include: disclaimer.md -->

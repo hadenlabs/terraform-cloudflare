@@ -1,11 +1,8 @@
 {
-  "baseUrl": "https://github.com/hadenlabs/terraform-module-template",
+  "baseUrl": "https://github.com/hadenlabs/terraform-cloudflare",
   "ignorePatterns": [
     {
       "pattern": "^https://hadenlabs.com"
-    },
-    {
-      "pattern": "^https://github.com/hadenlabs/terraform-module-template/compare"
     }
   ],
   "replacementPatterns": [
