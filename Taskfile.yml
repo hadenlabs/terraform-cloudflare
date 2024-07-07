@@ -119,7 +119,6 @@ tasks:
       - task: prettier:all
 
   test:
-    run: once
     desc: Execute of test
     cmds:
       - task: go:test
