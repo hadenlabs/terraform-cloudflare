@@ -18,6 +18,7 @@ includes:
   diagrams: ./provision/diagrams/Taskfile.yml
   terraform: ./provision/task/terraform.yml
   module_record: ./modules/record/Taskfile.yml
+  module_page: ./modules/page/Taskfile.yml
 
 env:
   DOCKER:
@@ -104,7 +105,11 @@ tasks:
       - task: terraform:doc
         vars:
           TERRAFORM_PATH: modules/record
+      - task: terraform:doc
+        vars:
+          TERRAFORM_PATH: modules/page
       - task: module_record:readme
+      - task: module_page:readme
       - >-
         gomplate --file {{.README_TEMPLATE}}
         --out {{.README_FILE}}
