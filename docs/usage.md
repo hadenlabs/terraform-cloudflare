@@ -1,4 +1,4 @@
-# How to use this project
+# How to use this Module
 
 ```hcl
   module "main" {

@@ -8,6 +8,15 @@
 ## Common
 
 ```hcl
+locals {
+  tags = merge(
+    var.tags,
+    {
+      ManagedBy = "terraform"
+    }
+  )
+}
+
 module "main" {
   source = git::https://github.com/hadenlabs/terraform-cloudflare//modules/record?ref=0.0.0
   version = 0.0.0
