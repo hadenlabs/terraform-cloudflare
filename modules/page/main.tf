@@ -93,5 +93,5 @@ resource "cloudflare_pages_domain" "this" {
   count        = local.outputs.module_enabled ? 1 : 0
   account_id   = local.outputs.account_id
   project_name = local.outputs.project_name
-  domain       = local.outputs.zone
+  domain       = format("%s.%s", local.outputs.project_name, local.outputs.zone)
 }
