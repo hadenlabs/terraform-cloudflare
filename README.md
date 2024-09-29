@@ -33,7 +33,7 @@ This is a list of requirements that need to be installed previously to enjoy all
 
 ## Usage
 
-# How to use this project
+# How to use this Module
 
 ```hcl
   module "main" {
@@ -56,6 +56,15 @@ Full working examples can be found in [examples](./examples) folder.
 ## Common
 
 ```hcl
+locals {
+  tags = merge(
+    var.tags,
+    {
+      ManagedBy = "terraform"
+    }
+  )
+}
+
 module "main" {
   source = git::https://github.com/hadenlabs/terraform-cloudflare//modules/record?ref=0.0.0
   version = 0.0.0
