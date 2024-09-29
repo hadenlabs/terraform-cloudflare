@@ -21,6 +21,12 @@ tasks:
       - sh: command -v go
         msg: "Please Install Go"
 
+  check:module:
+    desc: Has Module
+    preconditions:
+      - sh: '[ -n "{{.MODULE}}" ]'
+        msg: "Please add var environment module MODULE"
+
   check:gofmt:
     desc: Exist gofmt
     run: once
@@ -109,11 +115,18 @@ tasks:
 
   test:
     desc: Run go test against code.
-    run: once
     deps:
       - task: check:go
     cmds:
       - go test -race -v ./... -coverprofile cover.out -timeout 60m
+
+  test:module:
+    desc: Run go test to module against code.
+    deps:
+      - task: check:go
+      - task: check:module
+    cmds:
+      - go test -race -v ./modules/{{ .MODULE }}/... -coverprofile cover.out -timeout 60m
 
   build:
     desc: Build go packages.
