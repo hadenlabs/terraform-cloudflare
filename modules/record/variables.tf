@@ -47,3 +47,9 @@ variable "module_enabled" {
   description = "(Optional) Whether to create resources within the module or not. Default is true."
   default     = true
 }
+
+variable "proxied" {
+  type        = bool
+  description = "(Optional) Implement proxied for record. Default is false"
+  default     = false
+}

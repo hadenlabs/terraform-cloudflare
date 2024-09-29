@@ -4,6 +4,7 @@ import (
 	"crypto/rand"
 	"fmt"
 	"math/big"
+	"strings"
 
 	"github.com/lithammer/shortuuid/v3"
 
@@ -21,7 +22,7 @@ func Record() FakeRecord {
 }
 
 var (
-	names = []string{"OptimusPrime", "Wheeljack", "Bumblebee"}
+	names = []string{"optimusprime", "wheeljack", "bumblebee"}
 )
 
 func (n fakeRecord) Name() string {
@@ -29,6 +30,6 @@ func (n fakeRecord) Name() string {
 	if err != nil {
 		panic(errors.New(errors.ErrorUnknown, err.Error()))
 	}
-	nameuuid := fmt.Sprintf("%s-%s", names[num.Int64()], shortuuid.New())
+	nameuuid := strings.ToLower(fmt.Sprintf("%s-%s", names[num.Int64()], shortuuid.New()))
 	return nameuuid
 }

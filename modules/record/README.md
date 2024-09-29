@@ -66,6 +66,7 @@ No modules.
 | --- | --- | --- | --- | :-: |
 | module_enabled | (Optional) Whether to create resources within the module or not. Default is true. | `bool` | `true` | no |
 | name | The name of the record | `string` | n/a | yes |
+| proxied | (Optional) Implement proxied for record. Default is false | `bool` | `false` | no |
 | ttl | The TTL of the record (automatic: '1') | `number` | `3600` | no |
 | type | The type of the record | `string` | `"A"` | no |
 | value | The (string) value of the record. Either this or data must be specified | `string` | n/a | yes |

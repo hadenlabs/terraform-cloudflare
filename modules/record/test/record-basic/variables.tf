@@ -22,5 +22,5 @@ variable "type" {
 variable "ttl" {
   type        = number
   description = "The TTL of the record (automatic: '1')"
-  default     = 3600
+  default     = 1
 }
